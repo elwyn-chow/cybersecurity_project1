@@ -13,7 +13,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [filebeat-playbook.yml](Ansible/filebeat/filebeat-playbook.yml) - Ansible playbook YML file for filebeat
   - [metricbeat-config.yml](Ansible/metricbeat/metricbeat-config.yml) - Configuration file for metricbeat
   - [metricbeat-playbook.yml](Ansible/metricbeat/metricbeat-playbook.yml) - Ansible playbook YML file for metricbeat
-  - 
+ 
 This document contains the following details:
 - Description of the Topologu
 - Access Policies
@@ -39,15 +39,16 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway    | 10.0.0.4   | Linux (Ubuntu)   |
-| Web-1 VM | Web Server | 10.0.0.8   | Linux (Ubuntu)   |
-| Web-2 VM | Web Server | 10.0.0.9   | Linux (Ubuntu)   |
-| Web-3 VM | Web Server | 10.0.0.10   | Linux (Ubuntu)   |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function   | Private IP | Public IP        | Operating System |
+|----------|------------|------------|------------------|------------------|
+| Jump Box | Gateway    | 10.0.0.4   | 13.88.189.41     | Linux (Ubuntu)   |
+| Web-1 VM | Web Server | 10.0.0.8   | none             | Linux (Ubuntu)   |
+| Web-2 VM | Web Server | 10.0.0.9   | none             | Linux (Ubuntu)   |
+| Web-3 VM | Web Server | 10.0.0.10  | none             | Linux (Ubuntu)   |
+| DVWA-VM3 | Web Server | 10.3.0.4   | none             | Linux (Ubuntu)   |
+| DVWA-VM4 | Web Server | 10.2.0.4   | none             | Linux (Ubuntu)   |
+| DVWA-VM4 | Web Server | 10.2.0.4   | none             | Linux (Ubuntu)   |
+| Load Balancer | Load Balancer |    | 13.64.8.247      | | 
 
 ### Access Policies
 

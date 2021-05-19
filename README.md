@@ -116,10 +116,11 @@ SSH into the control node and follow the steps below:
 - Update the filebeat configuration file [filebeat-config.yml](Ansible/filebeat/filebeat-config.yml) to use your ELK Server's IP address wherever 10.1.0.4 is used
 - Update the metricbeat configuration file [metricbeat-playbook.yml](Ansible/metricbeat/metricbeat-playbook.yml) to use your ELK Server's IP address wherever 10.1.0.4 is used
 - Run the playbook, and navigate to http://[public IP address of ELM machine]:5601/app/kibana to check that the installation worked as expected.
-'''bash
+
+```bash
 ansible-playbook pentest.yml
 ansible-playbook install-elk.yml
 ansible-playbook filebeat-playbook.yml
 ansible-playbook metricbeat-playbook.yml
-'''
+```
 

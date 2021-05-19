@@ -41,7 +41,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
+| Jump Box | Gateway    | 10.0.0.4   | Linux (Ubuntu)   |
+| Web-1 VM | Web Server | 10.0.0.8   | Linux (Ubuntu)   |
+| Web-2 VM | Web Server | 10.0.0.9   | Linux (Ubuntu)   |
+| Web-3 VM | Web Server | 10.0.0.10   | Linux (Ubuntu)   |
 | TODO     |          |            |                  |
 | TODO     |          |            |                  |
 | TODO     |          |            |                  |

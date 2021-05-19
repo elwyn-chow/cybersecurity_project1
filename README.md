@@ -88,10 +88,15 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1: 10.0.0.8
+- Web-2: 10.0.0.9
+- Web-3: 10.0.0.10
+- DVWA-VM3: 10.3.0.4
+- DVWA-VM4: 10.2.0.4
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- filebeat
+- metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
@@ -100,8 +105,10 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the files [hosts](Ansible/hosts), [pentest.yml](Ansible/pentest.yml), and [install-elk.yml] to /etc/ansible.
+- Copy the [filebeat-playbook.yml](Ansible/filebeat/filebeat-playbook.yml) and [metricbeat-playbook.yml](Ansible/metricbeat/metricbeat-playbook.yml) files to /etc/ansible/roles
+- Copy the configuration files [filebeat-config.yml](Ansible/filebeat/filebeat-config.yml) and [metricbeat-config.yml](Ansible/metricbeat/metricbeat-config.yml) to /etc/ansible/files
+- Update the [hosts](Ansible/hosts) file to include the IP addresses of the Web, DVWA and ELK machines
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_

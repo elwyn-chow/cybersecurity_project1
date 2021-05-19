@@ -45,6 +45,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Web-1 VM | Web Server | 10.0.0.8   | none             | Linux (Ubuntu)   |
 | Web-2 VM | Web Server | 10.0.0.9   | none             | Linux (Ubuntu)   |
 | Web-3 VM | Web Server | 10.0.0.10  | none             | Linux (Ubuntu)   |
+| ELK-VM   | ELK Server | 10.1.0.4   | 13.88.189.41     | Linux (Ubuntu)   |
 | DVWA-VM3 | Web Server | 10.3.0.4   | none             | Linux (Ubuntu)   |
 | DVWA-VM4 | Web Server | 10.2.0.4   | none             | Linux (Ubuntu)   |
 | DVWA-VM4 | Web Server | 10.2.0.4   | none             | Linux (Ubuntu)   |
@@ -54,24 +55,27 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept SSH connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 203.220.68.69 which is my home PC's IP address
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by other machines within the virtual network.
+- JumpBox Provisioner has access to the Web and DVWM machines to install DVWM in a Docker container
+- JumpBox Provisioner has access to the ELK-VM machine to install ELK in a Docker container 
+- The Web and DVWM VMs send metric data to the ELK machine.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name                   | Publicly Accessible | Allowed IP Addresses           |
+|------------------------|---------------------|---------------------------------|
+| Jump Box               | Yes                 | 203.220.68.69 (Elwyn's PC)      |
+| Load Balancer          | Yes                 | 203.220.68.69 (Elwyn's PC)      |
+| ELK VM                 | Yes                 | 203.220.68.69 (Elwyn's PC)      |
+| Other machines in vNet | No                  | 10.0.0.4 (Jump Box Provisioner) |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- the installation is easily repeatable
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._

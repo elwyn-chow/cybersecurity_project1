@@ -66,9 +66,13 @@
 6. Finish your investigation with a short overview of your insights. 
 
      - What do you think the user was doing?
+	Download Linux packages.
      - Was the file they downloaded malicious? If not, what is the file used for?
+     	Unknown. We don't know the contents of the files from these logs. We'd need to check them out ourselves.
      - Is there anything that seems suspicious about this activity?
+     	No.
      - Is any of the traffic you inspected potentially outside of compliance guidlines?
+     	Potentially but we need to find out more about the files themselves.
 
 ---
 © 2020 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.  

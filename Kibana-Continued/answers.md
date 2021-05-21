@@ -278,12 +278,26 @@ We can generate abnormal data to view by creating a DoS web attack. The command-
 
 	- You can use a bash `for` or `while` loop, directly on the command line, just as you did with the SSH command.
 
+	```bash
+	#!/bin/bash
+
+while :
+do
+        wget 10.0.0.5
+done
+
+	```bash
+	
 5. Open the Metrics page for the web machine you attacked and answer the following questions:
 	
 	- Which of the VM metrics were affected the most from this traffic?
 
+	CPU Load
+	
 **Bonus**: Notice that your `wget` loop creates a lot of duplicate files on your jump box.
-
+```bash
+rm -f index.html*	
+```
 -  Write a command to delete _all_ of these files at once.
 
 -  Find a way to run the `wget` command without generating these extra files.
@@ -293,7 +307,16 @@ We can generate abnormal data to view by creating a DoS web attack. The command-
 	- Save that file to the Linux directory known as the "void" or the directory that doesn't save anything.
 
 **Bonus**: Write a nested loop that sends your `wget` command to all three of your web VMs over and over.
+```bash
+	#!/bin/bash
 
+while :
+do
+        wget 10.0.0.5 -O /dev/null
+	wget 10.0.0.6 -O /dev/null
+	wget 10.0.0.7 -O /dev/null
+done
+```bash
 </details>
 
 

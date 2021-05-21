@@ -32,12 +32,11 @@ Load balancing ensures that the application will be highly stable and balanced, 
 The load balancer is designed to protect the availability of the system by distributing the access of the system across multiple identical web servers. 
 The advantage of using the jump box VM is that it can deploy identically configured systems in a repeatable manner.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the access and system logs.
+- filebeat watches log files
+- metricbeat records the state of web servers
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function   | Private IP | Public IP        | Operating System |
 |----------|------------|------------|------------------|------------------|
@@ -78,13 +77,14 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - the installation is easily repeatable
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- install python3
+- install docker
+- download and launch a docker web container for dvwa 
+- enable docker service
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![screenshot of docker ps output](Images/sebp_elk_761_container.JPG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -99,7 +99,8 @@ We have installed the following Beats on these machines:
 - metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- filebeat collects data on who, what, when people are accessing things on the web servers and how the web server is responding. For example, it can show which countries are the most frequent users of the web sites.
+- metricbeat collects data on the state of the web servers. It will show when there is a high CPU load on a server.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 

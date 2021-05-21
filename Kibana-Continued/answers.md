@@ -129,6 +129,15 @@ We can easily do this by trying to SSH to a web machine from our jump box direct
 
 	 - You can use a bash `for` or `while` loop, directly on the command line, to repeatedly run the SSH command.
 
+```bash
+#!/bin/bash
+
+while :
+do
+        ssh hacker@10.0.0.5
+done
+
+```
 3. Search through the logs in Kibana to locate your generated failed login attempts.
 
 **Bonus**: Create a nested loop that generates SSH login attempts across all three of your VM's.

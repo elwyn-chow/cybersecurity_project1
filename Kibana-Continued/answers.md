@@ -140,8 +140,20 @@ done
 ```
 3. Search through the logs in Kibana to locate your generated failed login attempts.
 
+![Failed Logins](../Images/ssh+failed+login.JPG)
+	
 **Bonus**: Create a nested loop that generates SSH login attempts across all three of your VM's.
+```bash
+#!/bin/bash
 
+while :
+do
+        ssh hacker@10.0.0.5
+        ssh hax0r@10.0.0.6
+        ssh hackivist@10.0.0.7	
+done
+
+```
 
 
 </details>

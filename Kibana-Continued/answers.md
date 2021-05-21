@@ -200,6 +200,15 @@ Linux has a common, easy-to-use diagnostic program called `stress`. It is easy t
 
 5. View the Metrics page for that VM in Kibana.  What indicates that CPU usage increased?
 
+	Increased load in overview pack
+	![Stressed Overview](../Images/stressed_overview.JPG)
+	
+	Increased CPU load when stressed is running on Web-2:
+	![Stressed Web-2](../Images/web-2-stress_on.JPG)
+	
+	Return to normal CPU load when stressed is running on Web-2:
+	![Stressed Web-2](../Images/web-2-stress_off.JPG)
+	
 6. Run the `stress` program on all three of your VMs and take screenshots of the data generated on the Metrics page of Kibana.
 
   	- **Note:** The stress program will run until you quit with Ctrl+C.

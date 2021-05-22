@@ -1,46 +1,3 @@
-## Activity File: Interview Questions
-
-- This first project covers a wide range of topics including cloud, network security, and logging and monitoring.
-
-- When networking and talking to potential employers, you should be able to reference the work done on this project to answer specific interview questions or demonstrate your skills within a specific domain. 
-
-- You will choose a domain that you're interested in pursuing as a career and answer mock questions based on the suggested response format. 
-​
-### Instructions 
-
-1. Choose one of the following domains:
-    - Network security
-    - Cloud security
-    - Logging and monitoring
-
-    If you are unsure of which domain you want to focus on, that's okay. You can either choose the one you're most comfortable discussing, or complete the tasks in two or all three domains.
-
-2. Select one domain and one question. 
-
-    - Questions are provided for each domain. Choose one to answer from your chosen domain. 
-​
-3. Write a one-page response that answers the question using specific examples from your work on Project 1. Your response should flow and read like a presentation while keeping the general structure of the technical question response guidelines. 
-
-    You will submit this one-page response. 
-
-#### Reminder: Response Guidelines
-As a reminder,  good responses do the following. 
-​
-1. Restate the problem.
-2. Provide a concrete example scenario.
-3. Explain the solution requirements.
-4. Explain the solution details.
-5. Identify advantages and disadvantages of the solution​.
-​
-Including each of these components will ensure you prove your competency of subject matter and critical thinking. 
-​
-### Interview Questions by Domain
-
-Below you will find a list of questions, grouped by specific domains. Select one question to answer. 
-​ 
-
-For each question, where appropriate, we have provided you with specific prompts to consider as you structure each section of your response. Feel free to use these prompts or your own examples. 
-
 **Question 2: Unsecured Web Server**
 
 We have discovered that one of our virtual machines is running a web server on port 80. This is a problem because we want:
@@ -55,7 +12,8 @@ In a production environment, the solution to the problem would be:
 * block all inbound traffic on port 80
 * turn off the HTTP server and disable it such it does not restart at reboot
 * the load balancer would have to changed such that it is publicly accessible to any user but only on the correct port 443
-* a HTTPS server needs to be running on port 443 of each Web virtual machine
+* a HTTPS server needs to be running on port 443 of each Web virtual machine and the data needs to be encrypted appropriately
+* we should obtain HTTPS certification. We can obtain [free SSL certification from CloudFlare](https://www.cloudflare.com/ssl/?&_bt=488025616931&_bk=ssl%20certificate&_bm=e&_bn=g&_bg=113915058632&_placement=&_target=&_loc=9071836&_dv=c&awsearchcpc=1&gclid=Cj0KCQjw16KFBhCgARIsALB0g8LUZcO_GQzeitoXNCCPXeR7nhDZN3hH1stTWrD9VBmFpWP9XhcqmkYaAhbFEALw_wcB&gclsrc=aw.ds)
 
 
 3. Explain the Solution Requirements

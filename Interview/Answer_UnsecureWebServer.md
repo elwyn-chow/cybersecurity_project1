@@ -43,9 +43,15 @@ For each question, where appropriate, we have provided you with specific prompts
 
 **Question 2: Unsecured Web Server**
 
+We have discovered that one of our virtual machines is running a web server on port 80. This is a problem because we want:
+* all of our web traffic to be secure ie use HTTPS protocol and
+* run on port 443
+* our compliance guidelines require encryption in motion.
+
+In our ELK Project, we allowed HTTP access to the load balancer that was handling all the traffic to three Web virtual machines that were running Damn Vulnerable Web Application. Those lackadaisical conditions were acceptable because it was a training environment (not a production environment) and we had set our network security group's inbound rules to only permit access to my personal laptop's IP address.
+
 Suppose you find a server running HTTP on port 80, despite compliance guidelines requiring encryption in motion. What do you do?
 ​​
-1. Restate the Problem
 
 2. Provide a Concrete Example Scenario
     - In Project 1, did you have servers running HTTP on port `80`?  If so, why was it permissible to do so?

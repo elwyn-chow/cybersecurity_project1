@@ -13,7 +13,7 @@ In a production environment, the solution to the problem would be:
 * turn off the HTTP server and disable it such it does not restart at reboot
 * the load balancer would have to changed such that it is publicly accessible to any user but only on the correct port 443
 * a HTTPS server needs to be running on port 443 of each Web virtual machine and the data needs to be encrypted appropriately
-* we should obtain HTTPS certification. We can obtain [free SSL certification from CloudFlare](https://www.cloudflare.com/ssl/?&_bt=488025616931&_bk=ssl%20certificate&_bm=e&_bn=g&_bg=113915058632&_placement=&_target=&_loc=9071836&_dv=c&awsearchcpc=1&gclid=Cj0KCQjw16KFBhCgARIsALB0g8LUZcO_GQzeitoXNCCPXeR7nhDZN3hH1stTWrD9VBmFpWP9XhcqmkYaAhbFEALw_wcB&gclsrc=aw.ds)
+* we should obtain HTTPS certification. We can obtain [free SSL certification from CloudFlare](https://www.cloudflare.com/ssl/?&_bt=488025616931&_bk=ssl%20certificate&_bm=e&_bn=g&_bg=113915058632&_placement=&_target=&_loc=9071836&_dv=c&awsearchcpc=1&gclid=Cj0KCQjw16KFBhCgARIsALB0g8LUZcO_GQzeitoXNCCPXeR7nhDZN3hH1stTWrD9VBmFpWP9XhcqmkYaAhbFEALw_wcB&gclsrc=aw.ds) and [instructions on how to make the transition from HTTP to HTTPS](https://www.smashingmagazine.com/2017/06/guide-switching-http-https/)
 
 
 3. Explain the Solution Requirements

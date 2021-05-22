@@ -48,18 +48,18 @@ We have discovered that one of our virtual machines is running a web server on p
 * run on port 443
 * our compliance guidelines require encryption in motion.
 
-In our ELK Project, we allowed HTTP access to the load balancer that was handling all the traffic to three Web virtual machines that were running Damn Vulnerable Web Application. Those lackadaisical conditions were acceptable because it was a training environment (not a production environment) and we had set our network security group's inbound rules to only permit access to my personal laptop's IP address.
+In our ELK Project, we allowed HTTP access to the load balancer that was handling all the traffic to three Web virtual machines that were running Damn Vulnerable Web Application. The Web virtual machines were not publicly accessible - HTTP data to and from these machines had to pass through the load balancer.
+Those lackadaisical conditions were acceptable because it was a training environment (not a production environment) and we had set our network security group's inbound rules such that only my personal laptop's IP address could connect to the Jump Box Provisioner machine (for configuring docker and running docker to setup the Web VMs) and the Load Balancer. 
 
-Suppose you find a server running HTTP on port 80, despite compliance guidelines requiring encryption in motion. What do you do?
-​​
+In a production environment, the solution to the problem would be:
+* block all inbound traffic on port 80
+* turn off the HTTP server and disable it such it does not restart at reboot
+* the load balancer would have to changed such that it is publicly accessible to any user but only on the correct port 443
+* a HTTPS server needs to be running on port 443 of each Web virtual machine
 
-2. Provide a Concrete Example Scenario
-    - In Project 1, did you have servers running HTTP on port `80`?  If so, why was it permissible to do so?
-    
-    - In a real deployment, which specific machine would you configure differently? How, and why?
 
 3. Explain the Solution Requirements
-    - Why is running HTTP on port `80` a potential problem?
+   
     - How would you reconfigure a server to serve HTTP traffic safely?
     - How does this solution fix the problem?
 
